@@ -27,12 +27,3 @@ EOF
 echo "Verifying the Java version..."
 java -version
 
-# Restart Jenkins service
-echo "Restarting Jenkins service..."
-sudo systemctl restart jenkins
-
-# Check the status of Jenkins
-echo "Checking Jenkins service status..."
-sudo systemctl status jenkins
-
-echo "Java 17 installation and Jenkins configuration completed successfully!"
