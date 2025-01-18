@@ -1,3 +1,4 @@
+yum install java-1.8.0-openjdk -y
 wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.98/bin/apache-tomcat-9.0.98.tar.gz
 tar -xvzf apache-tomcat-9.0.98.tar.gz
 cd apache-tomcat-9.0.98/webapps/manager/META-INF/
