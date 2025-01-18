@@ -11,3 +11,7 @@ cd nexus/
 cd bin/
 sed -i 's/run_as_user=""/run_as_user="nexus"/' nexus.rc
 touch /etc/systemd/system/nexus.service
+echo -e "[Unit]\nDescription=nexus service\nAfter=network.target\n\n[Service]\nType=forking\nLimitNOFILE=65536\nUser=nexus\nGroup=nexus\nExecStart=/app/nexus/bin/nexus start\nExecStop=/app/nexus/bin/nexus stop\nRestart=on-abort\n\n[Install]\nWantedBy=multi-user.target" | sudo tee -a /etc/systemd/system/nexus.service > /dev/null
+chkconfig nexus on
+systemctl start nexus
+systemctl status nexus
